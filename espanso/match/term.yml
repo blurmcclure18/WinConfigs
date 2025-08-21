@@ -1,0 +1,7 @@
+matches:
+- trigger: :shell
+  replace: '{{output}}'
+- trigger: :winin
+  replace: 'winget install '
+- trigger: :winsea
+  replace: 'winget search '

@@ -1,0 +1,74 @@
+matches:
+# Default functions
+- trigger: :espanso
+  replace: Hi there!
+
+- trigger: ":date"
+  replace: "{{mydate}}"
+  vars:
+    - name: mydate
+      type: date
+      params:
+        format: "%m/%d/%Y"
+
+# NAD Account and ADU Account info
+- trigger: :admin
+  replace: 'amcclureadu-a'
+- trigger: :alec
+  replace: 'alecmcclure'
+- trigger: :email
+  replace: 'alec_mcclure@ilcp.uscourts.gov'
+- trigger: :cyb
+  replace: 'zU6c_M@*:1uCFMe'
+- trigger: :duo
+  replace: 'vvcccbigfulvjfkctbueudliggltbeflhletlvkgnrbh'
+
+# Local Admin Account info
+- trigger: .\adm
+  replace: '.\admin'
+- trigger: :iladm
+  replace: 'IlcpVDI#07'
+
+# File Paths
+- trigger: ":demdata"
+  replace: '\\adu.dcn\ilcp\DEMData\UserProfiles'
+
+- trigger: ":demconfig"
+  replace: '\\adu.dcn\ilcp\DEMConfig'
+
+# Espanso Form Testing
+- trigger: ":sochrono"
+  replace: "USPO {{form1.name}} conducted full home sex offender home inspection, including all outlying buildings and/or attached dwellings. {{form1.contraband}}. Community observation conducted prior to the home contact, {{form1.issues}}. 
+
+            Dynamic Risk Factors: 
+            Stable Risk Factors: 
+            Acute Risk Factors: 
+            
+            Victim access - 
+            
+            Substance abuse – 
+            
+            Emotional collapse – 
+            
+            Sexual pre-occupations - 
+            
+            Collapsed social supports – 
+            
+            Lack of cooperation with supervision - "
+  vars:
+    - name: "form1"
+      type: form
+      params:
+        layout: "Name: [[name]] Contraband?: [[contraband]] Issues?: [[issues]]"
+        fields:
+          name:
+          contraband:
+             type: list # or `choice`
+             values:
+               - "No Contraband observed in plain sight" 
+               - "YES_CONTRABAND"
+          issues:
+            type: list
+            values:
+              - "No issues or concerns noted"
+              - "YES_ISSUES"
