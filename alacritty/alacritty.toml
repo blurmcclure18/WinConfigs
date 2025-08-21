@@ -1,0 +1,24 @@
+[general]
+
+[window]
+title = "Alacritty"
+padding = {x = 15, y = 15}
+dynamic_padding = true
+dynamic_title = false
+
+
+[font]
+# Set the normal font family and style
+normal = { family = "CaskaydiaCove Nerd Font", style = "Regular" }
+
+# You can adjust the font size here
+size = 14.0
+
+[terminal]
+
+[terminal.shell]
+# Use PowerShell Core (pwsh.exe)
+program = "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+
+# Load your profile script from the network path
+args = ["-NoExit", "-Command", "& '\\\\adu.dcn\\ilcp\\DEMData\\UserProfiles\\AlecMcClure\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1'"]
